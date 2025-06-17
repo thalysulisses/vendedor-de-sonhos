@@ -1,0 +1,119 @@
+Algoritmo "vendedor_de_sonhos_interativo"
+
+
+
+Var
+
+   quantidade, total_sonhos: inteiro
+
+   preco_unitario, valor_venda, total_arrecadado, preco_medio: real
+
+
+
+Inicio
+
+   total_sonhos <- 0
+
+   total_arrecadado <- 0
+
+  
+
+   Escreval("===================================")
+
+   Escreval("  Bem-vindo à Loja do Hernesto ")
+
+   Escreval("   O melhor sonho da cidade   ")
+
+   Escreval("===================================")
+
+   Escreval()
+
+   Escreval("Digite a quantidade de sonhos por cada venda.")
+
+   Escreval("Digite 0 para encerrar o dia")
+
+   Escreval("-----------------------------------")
+
+  
+
+   Repita
+
+   Escreva("Informe a quantidade de sonhos da venda: ")
+
+   Leia(quantidade)
+
+     
+
+   Se quantidade > 0 Entao
+
+
+
+   // Define o preço conforme a quantidade da venda
+
+   Se quantidade >= 100 Entao
+
+      preco_unitario <- 13/2 //6,5 não leu a casa decimal
+
+   Senao
+
+      preco_unitario <- 9,0
+
+   FimSe
+
+  
+
+   // Calcula o valor da venda atual
+
+   valor_venda <- quantidade * preco_unitario
+
+  
+
+   // Acumula os totais do dia
+
+   total_sonhos <- total_sonhos + quantidade
+
+   total_arrecadado <- total_arrecadado + valor_venda
+
+
+
+   // Exibe os dados da venda atual
+
+   Escreval("Venda registrada. Valor: R$ ", valor_venda:0:2, " (", quantidade, " unidades a R$ ", preco_unitario:0:2, ")")
+
+   FimSe
+
+  
+
+   Até quantidade = 0
+
+
+
+   Se total_sonhos > 0 Entao
+
+      preco_medio <- total_arrecadado / total_sonhos
+
+
+
+      Escreval()
+
+      Escreval("========= RELATÓRIO FINAL =========")
+
+      Escreval("Total de sonhos vendidos: ", total_sonhos)
+
+      Escreval("Valor total arrecadado: R$ ", total_arrecadado:0:2)
+
+      Escreval("Preço médio por unidade: R$ ", preco_medio:0:2) //não consegui formatar para duas casas decimais
+
+      Escreval("===================================")
+
+   Senao
+
+      Escreval("Nenhuma venda foi registrada no dia.")
+
+   FimSe
+
+
+
+  
+
+Fimalgoritmo
